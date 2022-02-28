@@ -44,8 +44,24 @@ function generatePassword() {
   //asks if users want special characters 
   let special = window.confirm("Would you like special characters in your password?");
     if(special) {
-      userSelection = userSelection.concat(special);
+      userSelection = userSelection.concat(charSpecial);
     }
+
+  //returns the user selection for password parameter 
+  console.log(userSelection);
+
+  //makes sure generation was added 
+  if (userSelection.length === 0)
+    return;
+
+  //for loop to generate random chars according to variables added
+  for (var i = 0; i < passwordLength ; i++) {
+    var Index = Math.floor(Math.random() * userSelection.length);
+    var random = userSelection[Index];
+    createdPassword = createdPassword.concat(random);
+  };
+
+  return createdPassword;
 };
 
 //END GENERATE PASSWORD FUNCTION
