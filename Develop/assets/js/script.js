@@ -20,6 +20,7 @@ function generatePassword() {
     if (passwordLength > 128 || passwordLength <8 ) {
       var confirmLength = window.alert("Password must be between 8 and 128 characters, please resubmit");
       generatePassword();
+      return;
     };
   
   //asks if user wants numbers
