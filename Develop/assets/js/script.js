@@ -20,32 +20,31 @@ function generatePassword() {
     if (passwordLength > 128 || passwordLength <8 ) {
       var confirmLength = window.alert("Password must be between 8 and 128 characters, please resubmit");
       generatePassword();
-      return;
-    }  
+    };
   
   //asks if user wants numbers
   let numbers = window.confirm("Would you like numbers in your password?")
     if(numbers) {
       userSelection = userSelection.concat(charNumbers);
-    }
+    };
 
   //asks if user wants lowercase
   let lowerCase = window.confirm("Would you like lowercase letters in your password?");
     if(lowerCase) {
       userSelection = userSelection.concat(charLowerCase);
-    }
+    };
 
   //asks if users want upercase 
   let upperCase = window.confirm("Would you like uppercase letters in your password?"); 
     if(upperCase) {
       userSelection = userSelection.concat(charUpperCase);
-    }
+    };
   
   //asks if users want special characters 
   let special = window.confirm("Would you like special characters in your password?");
     if(special) {
       userSelection = userSelection.concat(charSpecial);
-    }
+    };
 
   //returns the user selection for password parameter 
   console.log(userSelection);
